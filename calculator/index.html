@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A premium, glassmorphic web calculator with real-time expression parsing, operator precedence evaluation, and responsive design.">
+  <title>Neumorphic Glass Calculator</title>
+  
+  <!-- Google Fonts - Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons for modern styling -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+  <!-- Dynamic Glowing Background Orbs -->
+  <div class="bg-glow-orb orb-1"></div>
+  <div class="bg-glow-orb orb-2"></div>
+  <div class="bg-glow-orb orb-3"></div>
+
+  <!-- Theme Toggle -->
+  <div class="theme-toggle-container">
+    <button id="themeToggleBtn" class="theme-toggle-btn" aria-label="Toggle light/dark theme">
+      <i class="fa-solid fa-sun icon-sun"></i>
+      <i class="fa-solid fa-moon icon-moon"></i>
+    </button>
+  </div>
+
+  <main class="calculator-container">
+    <!-- Calculator Glass Box -->
+    <div class="calculator-card">
+      <!-- Screen Display Section -->
+      <section class="display-section" aria-live="polite">
+        <div id="calcHistory" class="calc-history" aria-label="Calculation expression history"></div>
+        <div id="calcDisplay" class="calc-display" aria-label="Current input or result">0</div>
+      </section>
+
+      <!-- Keypad Grid Section -->
+      <section class="keypad-section">
+        <!-- Row 1 -->
+        <button id="btnAC" class="btn btn-control font-weight-semibold" data-action="clear">AC</button>
+        <button id="btnOpenParen" class="btn btn-control font-weight-semibold" data-action="paren-open">(</button>
+        <button id="btnCloseParen" class="btn btn-control font-weight-semibold" data-action="paren-close">)</button>
+        <button id="btnDivide" class="btn btn-operator" data-action="operator" data-value="/">÷</button>
+
+        <!-- Row 2 -->
+        <button id="btn7" class="btn btn-number" data-value="7">7</button>
+        <button id="btn8" class="btn btn-number" data-value="8">8</button>
+        <button id="btn9" class="btn btn-number" data-value="9">9</button>
+        <button id="btnMultiply" class="btn btn-operator" data-action="operator" data-value="*">×</button>
+
+        <!-- Row 3 -->
+        <button id="btn4" class="btn btn-number" data-value="4">4</button>
+        <button id="btn5" class="btn btn-number" data-value="5">5</button>
+        <button id="btn6" class="btn btn-number" data-value="6">6</button>
+        <button id="btnSubtract" class="btn btn-operator" data-action="operator" data-value="-">−</button>
+
+        <!-- Row 4 -->
+        <button id="btn1" class="btn btn-number" data-value="1">1</button>
+        <button id="btn2" class="btn btn-number" data-value="2">2</button>
+        <button id="btn3" class="btn btn-number" data-value="3">3</button>
+        <button id="btnPlus" class="btn btn-operator" data-action="operator" data-value="+">+</button>
+
+        <!-- Row 5 -->
+        <button id="btn0" class="btn btn-number" data-value="0">0</button>
+        <button id="btnDecimal" class="btn btn-number font-weight-semibold" data-value=".">.</button>
+        <button id="btnDelete" class="btn btn-control" data-action="delete" aria-label="Delete last input">
+          <i class="fa-solid fa-delete-left"></i>
+        </button>
+        <button id="btnEquals" class="btn btn-equals" data-action="calculate">=</button>
+      </section>
+    </div>
+  </main>
+
+  <!-- Main JavaScript File -->
+  <script src="app.js"></script>
+</body>
+</html>
